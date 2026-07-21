@@ -1,0 +1,160 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, monospace;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-navy: var(--navy);
+  --color-navy-foreground: var(--navy-foreground);
+  --color-tech-blue: var(--tech-blue);
+  --color-tech-blue-foreground: var(--tech-blue-foreground);
+  --color-gold: var(--gold);
+  --color-gold-foreground: var(--gold-foreground);
+
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+}
+
+:root {
+  color-scheme: dark;
+  --radius: 0.75rem;
+
+  --background: #020817;
+  --foreground: #eff7ff;
+  --card: rgba(7, 18, 35, 0.92);
+  --card-foreground: #eff7ff;
+  --popover: rgba(7, 18, 35, 0.95);
+  --popover-foreground: #eff7ff;
+  --muted: rgba(10, 18, 35, 0.4);
+  --muted-foreground: #9ccfff;
+
+  --navy: #081426;
+  --navy-foreground: #eff7ff;
+  --tech-blue: #4dd9ff;
+  --tech-blue-foreground: #020817;
+  --gold: #8cffd8;
+  --gold-foreground: #020817;
+
+  --primary: #4dd9ff;
+  --primary-foreground: #020817;
+  --secondary: rgba(255, 255, 255, 0.08);
+  --secondary-foreground: #eff7ff;
+  --accent: #91b8ff;
+  --accent-foreground: #020817;
+
+  --destructive: #ff5c8a;
+  --border: rgba(77, 217, 255, 0.22);
+  --input: rgba(77, 217, 255, 0.12);
+  --ring: #4dd9ff;
+
+  --chart-1: #0f4b8f;
+  --chart-2: #4dd9ff;
+  --chart-3: #91b8ff;
+  --chart-4: #1f2a45;
+  --chart-5: #14304c;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    background: radial-gradient(circle at top left, rgba(77, 217, 255, 0.12), transparent 22%),
+      radial-gradient(circle at bottom right, rgba(140, 255, 216, 0.1), transparent 24%),
+      var(--background);
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: 'cv11', 'ss01';
+    min-height: 100vh;
+    background-attachment: fixed;
+  }
+
+  ::selection {
+    background: rgba(77, 217, 255, 0.28);
+    color: #ffffff;
+  }
+
+  button,
+  input,
+  textarea,
+  select {
+    font: inherit;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading;
+  }
+}
+
+.futuristic-panel {
+  background: rgba(7, 18, 35, 0.88);
+  border: 1px solid rgba(77, 217, 255, 0.18);
+  box-shadow: 0 30px 90px rgba(0, 180, 216, 0.08);
+  backdrop-filter: blur(18px);
+}
+
+.futuristic-glow {
+  box-shadow: 0 0 45px rgba(77, 217, 255, 0.2);
+}
+
+.neon-text {
+  color: var(--tech-blue);
+  text-shadow: 0 0 20px rgba(77, 217, 255, 0.35);
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
