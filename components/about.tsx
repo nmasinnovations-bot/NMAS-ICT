@@ -17,10 +17,13 @@ export function About() {
           <div className="absolute -inset-4 bg-[#0a1128]/5 blur-2xl rounded-3xl" />
           <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-[#071423]/80 shadow-2xl">
             <Image
-              src="/images/it-team.png"
+              src="/images/it-team.webp"
               alt="ICT professionals reviewing technology requirements"
               width={1000}
               height={800}
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              loading="lazy"
+              decoding="async"
               className="h-full w-full object-cover"
             />
             {/* Overlay gradient */}

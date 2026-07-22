@@ -31,10 +31,13 @@ export function Infrastructure() {
           <Reveal delay={120}>
             <div className="overflow-hidden rounded-2xl border border-border shadow-lg">
               <Image
-                src="/images/server-room.png"
+                src="/images/server-room.webp"
                 alt="Modern enterprise data centre server room with network racks"
                 width={1000}
                 height={750}
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                loading="lazy"
+                decoding="async"
                 className="h-full w-full object-cover"
               />
             </div>
