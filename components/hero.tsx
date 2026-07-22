@@ -95,11 +95,13 @@ export function Hero() {
             <div className="absolute -inset-4 rounded-[2rem] bg-[#4dd9ff]/20 blur-3xl" aria-hidden="true" />
             <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#071423]/70 shadow-[0_60px_120px_-40px_rgba(0,212,255,0.35)]">
               <Image
-                src="/images/hero-enterprise-new.png"
+                src="/images/hero-enterprise-new.webp"
                 alt="South African enterprise IT professionals collaborating in a modern boardroom"
                 width={800}
                 height={600}
                 priority
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                decoding="async"
                 className="h-full w-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-tr from-[#020817]/70 to-transparent mix-blend-multiply" />
